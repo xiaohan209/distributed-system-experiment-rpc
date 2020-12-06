@@ -140,15 +140,14 @@ class ClientGUI(Frame):
         lPart = Frame(top)
         lTitle = Message(lPart, text="评测机输出结果", width=350)
         lTitle.pack(side=TOP, fill=BOTH)
-        myResult = Message(lPart, text=self.other_output[i], width=350)
-        myResult.pack(fill=BOTH)
+        otherResult = Message(lPart, text=self.other_output[i], width=350)
+        otherResult.pack(fill=BOTH)
         lPart.pack(side=LEFT, fill=BOTH)
-
         rPart = Frame(top)
         rTitle = Message(rPart, text="你的输出结果", width=350)
         rTitle.pack(side=TOP, fill=BOTH)
-        other = Message(rPart, text=self.my_output[i], width=350)
-        other.pack(fill=BOTH)
+        myResult = Message(rPart, text=self.my_output[i], width=350)
+        myResult.pack(fill=BOTH)
         rPart.pack(side=RIGHT, fill=BOTH)
         return
 
@@ -180,11 +179,9 @@ class ClientGUI(Frame):
             # call evaluate
             evaluate_server = xmlrpc.client.ServerProxy("http://" + self.evaluator_ip + ":" + self.evaluate_port)
             my_out, other_out, my_error, other_error = evaluate_server.evaluate(text)
-            print(my_out)
-            print(other_out)
-            print(my_error)
-            print(other_error)
             self.compare_result.clear()
+            self.my_output.clear()
+            self.other_output.clear()
             for i in range(len(my_out)):
                 my_flag = (my_error[i] != "")
                 other_flag = (other_error[i] != "")

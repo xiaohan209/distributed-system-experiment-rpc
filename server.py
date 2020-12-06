@@ -33,7 +33,7 @@ class interaction:
         min_value = sys.maxsize
         point = None
         for i in livelist.keys():
-            if livelist[i] < min_value :
+            if livelist[i] < min_value and i != now_ip:
                 min_value = livelist[i]
                 point = i
         if point is not None:
