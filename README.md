@@ -1,6 +1,6 @@
-#RPC-README
+# RPC-README
 
-###1.配置server端
+### 1.配置server端
 
 将rpc.zip文件解压后留下question和server.py在其中，其目录如下：
 
@@ -14,7 +14,7 @@
 ##### 修改question.txt
 可以从原始文件夹的评测题目.md中获取，也可以自行修改
 
-#####修改server.py
+##### 修改server.py
 
 1. 配置服务端端口，修改第10行dispatch_port
 2. 设置调用其他用户的端口，修改第11行evaluate_port
@@ -46,7 +46,7 @@
 
 
 
-#####testfile
+##### testfile
 
 内容设置为测试的样例，用户自行编写，也可以增加文件
 
