@@ -304,13 +304,12 @@ class ClientServer(threading.Thread):
         my_file = Path("./myProgram/my-origin.c")
         while not my_file.exists():
             time.sleep(1)
-        print("Evaluate Server Listening on port 4242")
+        print("Evaluate Server Listening on port "+str(self.evaluate_port))
         self.evaluate_server.serve_forever()
 
 
 if __name__ == '__main__':
     # open server
-
     server = ClientServer()
     server.start()
     # open Client

@@ -99,7 +99,7 @@ def open_server():
     # 将实例注册给rpc server
     server.register_instance(obj)
     server.register_function(test, "test")
-    print("Real Server Listening on port 1357")
+    print("Real Server Listening on port "+str(dispatch_port))
     server.serve_forever()
 
 
